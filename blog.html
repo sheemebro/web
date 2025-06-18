@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Shamee's Blog" />
+  <title>Blog | Shamee</title>
+  <link rel="shortcut icon" href="/logo.PNG" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+</head>
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white font-sans transition-colors duration-500">
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-6 py-4 bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-all duration-500">
+    <h1 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400 tracking-wide">Shamee</h1>
+    <nav class="space-x-6 text-sm hidden sm:flex items-center">
+      <a href="/index.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        Home
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="/about.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        About
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="/skills.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        Skills
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="/project.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        Projects
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="/blog.html" class="relative group text-indigo-500 dark:text-indigo-400 font-semibold" aria-current="page">
+        Blog
+        <span class="absolute left-0 -bottom-1 w-full h-0.5 bg-indigo-500"></span>
+      </a>
+      <a href="/contact.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        Contact
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+
+      <button onclick="toggleTheme()" class="ml-4 px-3 py-1 rounded-full bg-indigo-500 text-white text-xs font-semibold shadow hover:bg-indigo-600 transition duration-300">
+        Change Theme
+      </button>
+    </nav>
+  </header>
+
+  <!-- Blog Posts Section -->
+  <main class="max-w-5xl mx-auto px-6 py-20">
+    <h2 class="text-4xl font-extrabold text-center mb-16 bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+      Latest Blog Posts
+    </h2>
+
+    <section class="space-y-12">
+      <!-- Blog posts injected here -->
+    </section>
+  </main>
+
+  <footer class="text-center text-gray-600 dark:text-gray-300 text-sm py-6 bg-gray-100 dark:bg-gray-800">
+    &copy; 2025 Shamee | Coded with ❤️
+  </footer>
+
+  <script>
+    const posts = [
+      {
+        title: "Starting Your Coding Journey",
+        date: "June 1, 2025",
+        summary: "How to kick off your programming career with practical tips and resources.",
+        url: "#"
+      },
+      {
+        title: "Understanding Machine Learning Basics",
+        date: "June 5, 2025",
+        summary: "An introduction to machine learning concepts explained simply.",
+        url: "#"
+      },
+      {
+        title: "Building Responsive Websites with Tailwind CSS",
+        date: "June 10, 2025",
+        summary: "A beginner’s guide to crafting responsive layouts quickly using Tailwind.",
+        url: "#"
+      },
+      {
+        title: "Why Dark Mode is the Future",
+        date: "June 12, 2025",
+        summary: "Exploring the benefits of dark mode for users and developers alike.",
+        url: "#"
+      }
+    ];
+
+    function createPostCard(post) {
+      return `
+        <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow duration-300">
+          <header class="mb-4">
+            <h3 class="text-2xl font-semibold text-indigo-600 dark:text-indigo-400 mb-1">${post.title}</h3>
+            <time datetime="${new Date(post.date).toISOString()}" class="text-sm text-gray-500 dark:text-gray-400">${post.date}</time>
+          </header>
+          <p class="text-gray-700 dark:text-gray-300 mb-6">${post.summary}</p>
+          <a href="${post.url}" class="inline-block text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">
+            Read More &rarr;
+          </a>
+        </article>
+      `;
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const section = document.querySelector("main section");
+      section.innerHTML = posts.map(createPostCard).join("");
+    });
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Shamee's Skills and Expertise" />
+  <title>Skills | Shamee</title>
+  <link rel="shortcut icon" href="/logo.PNG" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body class="bg-white text-black dark:bg-gray-900 dark:text-white font-sans transition-colors duration-500">
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-6 py-4 bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-all duration-500">
+    <h1 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400 tracking-wide">Shamee</h1>
+    <nav class="space-x-6 text-sm hidden sm:flex items-center">
+      <a href="/index.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        Home
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="/about.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        About
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="/skills.html" class="relative group text-indigo-500 dark:text-indigo-400 font-semibold" aria-current="page">
+        Skills
+        <span class="absolute left-0 -bottom-1 w-full h-0.5 bg-indigo-500"></span>
+      </a>
+      <a href="/project.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        Projects
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="/blog.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        Blog
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="/contact.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        Contact
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+
+      <button onclick="toggleTheme()" class="ml-4 px-3 py-1 rounded-full bg-indigo-500 text-white text-xs font-semibold shadow hover:bg-indigo-600 transition duration-300">
+        Change Theme
+      </button>
+    </nav>
+  </header>
+
+  <!-- Skills Section -->
+  <main class="max-w-4xl mx-auto px-6 py-20">
+    <h2 class="text-4xl font-extrabold text-center mb-12 bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+      Skills & Expertise
+    </h2>
+
+    <section class="space-y-12">
+
+      <!-- Web Development -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-6 text-indigo-500">Web Development</h3>
+        <div class="space-y-5 max-w-lg">
+          <Skill name="HTML" level="90" />
+          <Skill name="CSS & Tailwind" level="85" />
+          <Skill name="JavaScript" level="75" />
+          <Skill name="Django" level="80" />
+          <Skill name="React (Learning)" level="40" />
+        </div>
+      </div>
+
+      <!-- Programming & Scripting -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-6 text-indigo-500">Programming & Scripting</h3>
+        <div class="space-y-5 max-w-lg">
+          <Skill name="Python" level="85" />
+          <Skill name="C++ (Basics)" level="40" />
+          <Skill name="SQL" level="70" />
+          <Skill name="Git & GitHub" level="80" />
+        </div>
+      </div>
+
+      <!-- Machine Learning -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-6 text-indigo-500">Machine Learning</h3>
+        <div class="space-y-5 max-w-lg">
+          <Skill name="Pandas & NumPy" level="80" />
+          <Skill name="Scikit-Learn" level="75" />
+          <Skill name="Matplotlib & Seaborn" level="75" />
+          <Skill name="Deep Learning (Starting)" level="35" />
+        </div>
+      </div>
+
+      <!-- Graphic Design -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-6 text-indigo-500">Graphic Design</h3>
+        <div class="space-y-5 max-w-lg">
+          <Skill name="Adobe Photoshop" level="70" />
+          <Skill name="Adobe Illustrator" level="65" />
+          <Skill name="Figma (Basics)" level="50" />
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="text-center text-gray-600 dark:text-gray-300 text-sm py-6 bg-gray-100 dark:bg-gray-800">
+    &copy; 2025 Shamee | Coded with ❤️
+  </footer>
+
+  <script>
+    // Reusable Skill component as a function
+    function Skill({ name, level }) {
+      return `
+        <div>
+          <div class="flex justify-between mb-1 text-sm font-medium text-gray-900 dark:text-gray-200">
+            <span>${name}</span>
+            <span>${level}%</span>
+          </div>
+          <div class="w-full bg-gray-200 rounded-full h-4 dark:bg-gray-700">
+            <div class="bg-indigo-500 h-4 rounded-full" style="width: ${level}%; transition: width 1s ease;"></div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Inject all Skill components into the page dynamically
+    document.addEventListener("DOMContentLoaded", () => {
+      const containers = document.querySelectorAll("div.space-y-5.max-w-lg");
+      const skillsData = [
+        [ // Web Development
+          { name: "HTML", level: 90 },
+          { name: "CSS & Tailwind", level: 85 },
+          { name: "JavaScript", level: 75 },
+          { name: "Django", level: 80 },
+          { name: "React (Learning)", level: 40 },
+        ],
+        [ // Programming & Scripting
+          { name: "Python", level: 85 },
+          { name: "C++ (Basics)", level: 40 },
+          { name: "SQL", level: 70 },
+          { name: "Git & GitHub", level: 80 },
+        ],
+        [ // Machine Learning
+          { name: "Pandas & NumPy", level: 80 },
+          { name: "Scikit-Learn", level: 75 },
+          { name: "Matplotlib & Seaborn", level: 75 },
+          { name: "Deep Learning (Starting)", level: 35 },
+        ],
+        [ // Graphic Design
+          { name: "Adobe Photoshop", level: 70 },
+          { name: "Adobe Illustrator", level: 65 },
+          { name: "Figma (Basics)", level: 50 },
+        ],
+      ];
+
+      containers.forEach((container, i) => {
+        container.innerHTML = skillsData[i].map(skill => Skill(skill)).join("");
+      });
+    });
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>
