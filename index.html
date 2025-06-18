@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Shamee - Developer Portfolio">
+  <link rel="shortcut icon" href="/logo.PNG" type="image/x-icon">
+  <title>Shamee | Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <style>
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="font-sans transition-colors duration-500 bg-white text-black dark:bg-gray-900 dark:text-white">
+
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center px-6 py-4 bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-all duration-500">
+    <h1 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400 tracking-wide">Shamee</h1>
+
+    <nav class="space-x-6 text-sm hidden sm:flex items-center">
+      <a href="/index.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        Home
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="/about.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        About
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="/skills.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        Skills
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="/project.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        Projects
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="/blog.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        Blog
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+      <a href="/contact.html" class="relative group text-gray-700 dark:text-gray-300 hover:text-indigo-500 transition-colors duration-300">
+        Contact
+        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-indigo-500 transition-all group-hover:w-full"></span>
+      </a>
+
+      <!-- Theme Toggle Button -->
+      <button onclick="toggleTheme()" class="ml-4 px-3 py-1 rounded-full bg-indigo-500 text-white text-xs font-semibold shadow hover:bg-indigo-600 transition duration-300">
+        Change Theme
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="flex flex-col items-center justify-center text-center py-24 px-4">
+    <h2 class="text-4xl sm:text-5xl font-extrabold mb-4 bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">
+      Hi, I'm Shamee
+    </h2>
+    <p class="text-gray-700 dark:text-gray-300 max-w-xl text-lg">A passionate developer crafting code and creativity. Currently building YouPlay 🚀</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="bg-gray-100 dark:bg-gray-800 py-16 px-6 rounded-t-3xl">
+    <h3 class="text-2xl font-semibold text-center text-indigo-500 dark:text-indigo-400 mb-10">Skills</h3>
+    <div class="flex flex-wrap justify-center gap-4 text-center max-w-5xl mx-auto">
+      <span class="bg-gray-300 dark:bg-gray-700 px-5 py-2 rounded-xl">HTML</span>
+      <span class="bg-gray-300 dark:bg-gray-700 px-5 py-2 rounded-xl">CSS</span>
+      <span class="bg-gray-300 dark:bg-gray-700 px-5 py-2 rounded-xl">JavaScript</span>
+      <span class="bg-gray-300 dark:bg-gray-700 px-5 py-2 rounded-xl">Python</span>
+      <span class="bg-gray-300 dark:bg-gray-700 px-5 py-2 rounded-xl">Django</span>
+      <span class="bg-gray-300 dark:bg-gray-700 px-5 py-2 rounded-xl">Tailwind CSS</span>
+      <span class="bg-gray-300 dark:bg-gray-700 px-5 py-2 rounded-xl">Machine Learning</span>
+      <span class="bg-gray-300 dark:bg-gray-700 px-5 py-2 rounded-xl">Data Analysis</span>
+      <span class="bg-gray-300 dark:bg-gray-700 px-5 py-2 rounded-xl">Graphics Design</span>
+      <span class="bg-gray-300 dark:bg-gray-700 px-5 py-2 rounded-xl">Web Development</span>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 px-6 bg-white dark:bg-gray-900 transition-colors duration-500">
+    <h3 class="text-2xl font-semibold text-center text-indigo-500 dark:text-indigo-400 mb-10">Projects</h3>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <!-- Project Card -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:border hover:border-indigo-500">
+        <h4 class="text-xl font-bold text-indigo-600 dark:text-indigo-300 mb-2">YouPlay</h4>
+        <p class="text-gray-700 dark:text-gray-300 text-sm">A platform empowering small creators with instant monetization.</p>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:border hover:border-indigo-500">
+        <h4 class="text-xl font-bold text-indigo-600 dark:text-indigo-300 mb-2">ML Projects</h4>
+        <p class="text-gray-700 dark:text-gray-300 text-sm">Exploring machine learning: regression, classification, clustering & deep learning.</p>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md transform transition duration-500 hover:scale-105 hover:shadow-2xl hover:border hover:border-indigo-500">
+        <h4 class="text-xl font-bold text-indigo-600 dark:text-indigo-300 mb-2">Personal Blog</h4>
+        <p class="text-gray-700 dark:text-gray-300 text-sm">Sharing coding journey, insights & experiences.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Particles JS Init -->
+  <script>
+    particlesJS('particles-js', {
+      particles: {
+        number: { value: 60, density: { enable: true, value_area: 800 }},
+        color: { value: '#888888' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: 'none',
+          out_mode: 'bounce'
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: { enable: true, mode: 'grab' },
+          onclick: { enable: true, mode: 'push' }
+        },
+        modes: {
+          grab: { distance: 200, line_linked: { opacity: 0.4 }},
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+
+  <!-- Theme Toggle Script -->
+  <script>
+    function toggleTheme() {
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
+
+  <footer class="text-center text-gray-600 dark:text-gray-300 text-sm py-6 bg-gray-100 dark:bg-gray-800">
+    &copy; 2025 Shamee | Coded with ❤️
+  </footer>
+
+</body>
+</html>
